@@ -32,7 +32,7 @@ public class DocSharingClient {
     }
 
     private static void connectToServer() {
-        try (Socket socket = new Socket("localhost", 12345);
+        try (Socket socket = new Socket("192.168.1.97", 12345);
              BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()))) {
 
             String message;
@@ -45,7 +45,7 @@ public class DocSharingClient {
     }
 
     private static void sendMessageToServer(String message) {
-        try (Socket socket = new Socket("localhost", 12345);
+        try (Socket socket = new Socket("192.168.1.97", 12345);
              PrintWriter out = new PrintWriter(socket.getOutputStream(), true)) {
 
             out.println(message);
